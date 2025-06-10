@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfume Ideal con IA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Encuentra tu Perfume Ideal 🌸</h1>
+
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+    <input type="number" id="edad" placeholder="Edad" required>
+
+    <select id="genero" required>
+      <option value="">Selecciona tu género</option>
+      <option value="femenino">Femenino</option>
+      <option value="masculino">Masculino</option>
+      <option value="no binario">No binario</option>
+      <option value="otro">Otro</option>
+    </select>
+
+    <select id="clima" required>
+      <option value="">¿Qué clima prefieres?</option>
+      <option value="tropical">Tropical</option>
+      <option value="frío">Frío</option>
+      <option value="templado">Templado</option>
+    </select>
+
+    <select id="notas" required>
+      <option value="">¿Qué notas te gustan?</option>
+      <option value="cítricas">Cítricas</option>
+      <option value="florales">Florales</option>
+      <option value="amaderadas">Amaderadas</option>
+      <option value="orientales">Orientales</option>
+    </select>
+
+    <select id="personalidad" required>
+      <option value="">¿Cómo describirías tu personalidad?</option>
+      <option value="romántica">Romántica</option>
+      <option value="aventurera">Aventurera</option>
+      <option value="elegante">Elegante</option>
+      <option value="misteriosa">Misteriosa</option>
+    </select>
+
+    <input type="submit" value="Generar con IA">
+  </form>
+
+  <div id="resultado"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
