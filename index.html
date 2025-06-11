@@ -1,54 +1,51 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Perfume Ideal con IA</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PerfumeMatch</title>
 </head>
 <body>
-
-  <h1>Encuentra tu Perfume Ideal 🌸</h1>
-
+  <h1>Descubre tu perfume ideal</h1>
   <form id="formulario">
-    <input type="text" id="nombre" placeholder="Tu nombre" required>
-    <input type="number" id="edad" placeholder="Edad" required>
+    <input type="text" id="nombre" placeholder="Tu nombre" required><br><br>
+    <input type="number" id="edad" placeholder="Tu edad" required><br><br>
 
+    <label for="genero">Género:</label>
     <select id="genero" required>
-      <option value="">Selecciona tu género</option>
       <option value="femenino">Femenino</option>
       <option value="masculino">Masculino</option>
-      <option value="no binario">No binario</option>
-      <option value="otro">Otro</option>
-    </select>
+    </select><br><br>
 
+    <label for="clima">Clima donde vives:</label>
     <select id="clima" required>
-      <option value="">¿Qué clima prefieres?</option>
-      <option value="tropical">Tropical</option>
-      <option value="frío">Frío</option>
+      <option value="calido">Cálido</option>
       <option value="templado">Templado</option>
-    </select>
+      <option value="frio">Frío</option>
+    </select><br><br>
 
-    <select id="notas" required>
-      <option value="">¿Qué notas te gustan?</option>
-      <option value="cítricas">Cítricas</option>
-      <option value="florales">Florales</option>
-      <option value="amaderadas">Amaderadas</option>
-      <option value="orientales">Orientales</option>
-    </select>
+    <label for="aroma">Aroma preferido:</label>
+    <select id="aroma" required>
+      <option value="floral">Floral</option>
+      <option value="citricos">Cítricos</option>
+      <option value="amaderado">Amaderado</option>
+      <option value="dulce">Dulce</option>
+      <option value="fresco">Fresco</option>
+    </select><br><br>
 
+    <label for="personalidad">Tu personalidad:</label>
     <select id="personalidad" required>
-      <option value="">¿Cómo describirías tu personalidad?</option>
-      <option value="romántica">Romántica</option>
-      <option value="aventurera">Aventurera</option>
-      <option value="elegante">Elegante</option>
-      <option value="misteriosa">Misteriosa</option>
-    </select>
+      <option value="romantico">Romántic@</option>
+      <option value="energico">Energétic@</option>
+      <option value="misterioso">Misterios@</option>
+      <option value="relajado">Relajad@</option>
+    </select><br><br>
 
-    <input type="submit" value="Generar con IA">
+    <button type="submit">Recomendar perfume</button>
   </form>
 
-  <div id="resultado"></div>
+  <h2>Resultado:</h2>
+  <p id="resultado"></p>
 
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
