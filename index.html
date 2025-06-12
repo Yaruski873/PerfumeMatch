@@ -2,60 +2,64 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PerfumeMatch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfume Ideal</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ff69b4" />
 </head>
 <body>
   <div class="container">
-    <h1>💐 Encuentra tu Perfume Ideal</h1>
-    
-    <form id="formulario">
-      <input type="text" id="nombre" placeholder="Tu nombre" required />
-      <input type="number" id="edad" placeholder="Tu edad" required />
-
-      <select id="genero" required>
+    <h1>Descubre tu Perfume Ideal</h1>
+    <form id="perfumeForm">
+      <input type="text" name="nombre" placeholder="Nombre" required />
+      <input type="number" name="edad" placeholder="Edad" required />
+      
+      <select name="genero" required>
         <option value="">Género</option>
         <option value="femenino">Femenino</option>
         <option value="masculino">Masculino</option>
+        <option value="otro">Otro</option>
       </select>
 
-      <select id="clima" required>
-        <option value="">Clima donde vives</option>
-        <option value="calido">Cálido</option>
+      <select name="clima" required>
+        <option value="">Clima Preferido</option>
+        <option value="frío">Frío</option>
+        <option value="cálido">Cálido</option>
         <option value="templado">Templado</option>
-        <option value="frio">Frío</option>
       </select>
 
-      <select id="aroma" required>
-        <option value="">Aroma preferido</option>
-        <option value="floral">Floral</option>
-        <option value="citricos">Cítricos</option>
-        <option value="amaderado">Amaderado</option>
+      <select name="aroma" required>
+        <option value="">Tipo de Aroma</option>
         <option value="dulce">Dulce</option>
-        <option value="fresco">Fresco</option>
+        <option value="amaderado">Amaderado</option>
+        <option value="cítrico">Cítrico</option>
+        <option value="floral">Floral</option>
       </select>
 
-      <select id="personalidad" required>
-        <option value="">Tu personalidad</option>
-        <option value="romantico">Romántic@</option>
-        <option value="energico">Energétic@</option>
-        <option value="misterioso">Misterios@</option>
-        <option value="relajado">Relajad@</option>
+      <select name="personalidad" required>
+        <option value="">Personalidad</option>
+        <option value="romántico/a">Romántico/a</option>
+        <option value="aventurero/a">Aventurero/a</option>
+        <option value="elegante">Elegante</option>
+        <option value="tranquilo/a">Tranquilo/a</option>
       </select>
 
-      <button type="submit">✨ Recomendar</button>
+      <button type="submit">Recomendar Perfume</button>
     </form>
 
-    <div id="resultado-container">
-  <p id="resultado"></p>
-  <img id="imagen-perfume" src="" alt="Perfume recomendado" style="display:none; max-width: 200px; margin-top: 1rem;" />
-</div>
-
-      <p id="resultado">Llena el formulario para conocer tu perfume ideal.</p>
+    <div id="resultado" class="resultado">
+      <!-- Aquí aparecerá la recomendación -->
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log("✅ Service Worker registrado"))
+        .catch(err => console.error("❌ Error registrando Service Worker:", err));
+    }
+  </script>
 </body>
 </html>
